@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "books/all" => "books#all"
+  namespace :books, :constraints => {:format => 'json'} do
+    get "all"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
